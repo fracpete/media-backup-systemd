@@ -90,3 +90,10 @@ timeout 120m rsync -av --rsh=ssh --modify-window=3601 /media/xbmc/media/ backups
   [Install]
   WantedBy=multi-user.target
   ```
+* verify systemd jobs: `systemd-analyze verify /etc/systemd/system/media_.*`
+* enable system timers:
+  ```bash
+  systemctl enable media_permissions.timer
+  systemctl enable media_backup.timer
+  ```
+  
