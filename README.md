@@ -5,6 +5,8 @@ Consists of two timer-based systemd jobs:
 * **media_permissions** - fixes the permissions on the media server to ensure that the backup can work properly (runs every day at 1am)
 * **media_backup** - uses rsync to sync media folder on media server with one on the backup server (runs every day at 2am)
 
+systemd services/timers based on [this tutorial](https://documentation.suse.com/smart/systems-management/html/systemd-working-with-timers/index.html).
+
 ## Backup user
 
 Create a user `pibak` for handling the backup operation.
