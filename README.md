@@ -44,7 +44,8 @@ find /media/xbmc/media -type d -exec chmod 775 {} \;
 ```bash
 #!/bin/bash
 
-timeout 120m rsync -av --rsh=ssh --modify-window=3601 /media/xbmc/media/ backupserver.lan:/media/backup/media/xbmc
+# rsync files to backup server for at most 2h
+timeout 120m rsync -av --delete --rsh=ssh --modify-window=3601 /media/xbmc/media/ backupserver.lan:/media/backup/media/xbmc
 ```
 
 ## Systemd (media server)
